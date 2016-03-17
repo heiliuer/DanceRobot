@@ -19,3 +19,6 @@ footer{
 	bottom: 2px;
 	color:#aaa;
 }
+.inline {
+	display: inline;
+}

@@ -32,7 +32,7 @@ var Dancer = function (options) {
 
 Dancer.OPTIONS = {
     canvasSelector: "#dancer",
-    baseTimer: 20
+    baseTimer: 30
 };
 
 Dancer.prototype = {
@@ -74,3 +74,8 @@ Dancer.prototype = {
 };
 
 new Dancer({canvasSelector: "#visualizer_wrapper2"}).init(SOURCES.rebot).start();
+new Dancer({canvasSelector: "#visualizer_wrapper3"}).init(SOURCES.rebot).start();
+new Dancer({canvasSelector: "#visualizer_wrapper4"}).init(SOURCES.rebot).start();
+new Dancer({canvasSelector: "#visualizer_wrapper5"}).init(SOURCES.rebot).start();
+new Dancer({canvasSelector: "#visualizer_wrapper6"}).init(SOURCES.rebot).start();
+new Dancer({canvasSelector: "#visualizer_wrapper7"}).init(SOURCES.rebot).start();
