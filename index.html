@@ -7,6 +7,9 @@
 </head>
 <body>
 <div id="wrapper">
+
+    <h2 align="center">跳舞的机器人BP算法尝试</h2>
+
     <div id="fileWrapper" class="file_wrapper">
         <div id="info">
             HTML5 Audio API showcase | An Audio Viusalizer
@@ -20,19 +23,28 @@
     </div>
 
     <div>
-        <canvas  id='visualizer_wrapper2' width="120" height="200"></canvas>
-        <canvas  id='visualizer_wrapper3' width="120" height="200"></canvas>
-        <canvas  id='visualizer_wrapper4' width="120" height="200"></canvas>
-        <canvas  id='visualizer_wrapper5' width="120" height="200"></canvas>
-        <canvas  id='visualizer_wrapper6' width="120" height="200"></canvas>
-        <canvas  id='visualizer_wrapper7' width="120" height="200"></canvas>
+        <small>能量</small> <progress value="0" id="energy"  max="1000"></progress> <span id="energy_val"></span>
+    </div>
+
+    <div>
+        <canvas id='dancer1' width="120" height="200"></canvas>
+        <canvas id='dancer2' width="120" height="200"></canvas>
+        <canvas id='dancer3' width="120" height="200"></canvas>
+        <canvas id='dancer4' width="120" height="200"></canvas>
+        <canvas id='dancer5' width="120" height="200"></canvas>
+        <canvas id='dancer6' width="120" height="200"></canvas>
+    </div>
+    <div>
+        <small>timer: 20<input max="100" min="0" VALUE="0" type="range" id="timer"/>120</small>
     </div>
 </div>
 <!--<footer>-->
-    <!--<small>Star me on <a href="https://github.com/Wayou/HTML5_Audio_Visualizer" target="_blank">GitHub</a></small>-->
+<!--<small>Star me on <a href="https://github.com/Wayou/HTML5_Audio_Visualizer" target="_blank">GitHub</a></small>-->
 <!--</footer>-->
 <script src="bower_components/jquery/jquery.min.js"></script>
 <script src="js/html5_audio_visualizer.js"></script>
-<script src="js/more.js"></script>
+<script src="js/html5_audio_visualizer_patch.js"></script>
+<script src="js/dancer.js"></script>
+<script src="js/index.js"></script>
 </body>
 </html>

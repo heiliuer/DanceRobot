@@ -7,9 +7,6 @@
  * view the project page:https://github.com/Wayou/HTML5_Audio_Visualizer/
  * view online demo:http://wayou.github.io/HTML5_Audio_Visualizer/
  */
-window.onload = function() {
-    new Visualizer().ini();
-};
 var Visualizer = function() {
     this.file = null; //the current file
     this.fileName = null; //the current file name
@@ -174,6 +171,7 @@ Visualizer.prototype = {
         var drawMeter = function() {
             var array = new Uint8Array(analyser.frequencyBinCount);
             analyser.getByteFrequencyData(array);
+            that.handlerBuffer&&that.handlerBuffer(array);
             if (that.status === 0) {
                 //fix when some sounds end the value still not back to zero
                 for (var i = array.length - 1; i >= 0; i--) {
