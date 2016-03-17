@@ -1,0 +1,11 @@
+{
+  "name": "DanceRobot",
+  "description": "DanceRobot",
+  "version": "0.0.0",
+  "homepage": "",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "jquery": "~1.9.0"
+  }
+}
