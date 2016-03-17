@@ -11,8 +11,8 @@
 }();
 
 function preDownloadSrc(src) {
+    $.ajaxSettings.cache = true;
     for (var i in src) {
-        $.ajaxSettings.cache = true;
         $.get(src[i]);
     }
 }
