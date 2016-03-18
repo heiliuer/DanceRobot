@@ -123,6 +123,7 @@ Visualizer.prototype = {
         var audioBufferSouceNode = audioContext.createBufferSource(),
             analyser = audioContext.createAnalyser(),
             that = this;
+        this.audioBufferSouceNode=audioBufferSouceNode;
         //connect the source to the analyser
         audioBufferSouceNode.connect(analyser);
         //connect the analyser to the destination(the speaker), or we won't hear the sound
@@ -151,6 +152,9 @@ Visualizer.prototype = {
         this.info = 'Playing ' + this.fileName;
         document.getElementById('fileWrapper').style.opacity = 0.2;
         this._drawSpectrum(analyser);
+    },
+    getAudioBufferSouceNode: function () {
+      return this.audioBufferSouceNode;
     },
     _drawSpectrum: function(analyser) {
         var that = this,

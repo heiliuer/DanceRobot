@@ -47,4 +47,9 @@ var $timer = $("#timer").change(function () {
     dancer6.setTimerIncrement($timer.val());
 });
 
+var $progress = $("#progress").change(function () {
+    visualizer.getAudioBufferSouceNode().start($progress.val());
+});
+
+
 
