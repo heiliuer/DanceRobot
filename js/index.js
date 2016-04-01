@@ -29,6 +29,11 @@ var dancer6 = new Dancer({name: "dancer6", canvasSelector: "#dancer6"}).init(SOU
 
 visualizer.setHandlerBuffer(function (buffer) {
     dancer1.handlerBuffer(buffer);
+
+    //console.log(dancer1.energyMax,dancer1.energyMin);
+    $("#maxEnergy").val(dancer1.energyMax * 1000);
+    $("#minEnergy").val(dancer1.energyMin * 1000);
+
     dancer2.handlerBuffer(buffer);
     dancer3.handlerBuffer(buffer);
     dancer4.handlerBuffer(buffer);

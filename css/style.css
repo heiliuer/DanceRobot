@@ -1,8 +1,8 @@
 html, body {
     margin: 0;
     font-family: arial, "Microsoft YaHei";
-    background-color: #737373;
-    color: #FEFEFE;
+    /*background-color: #737373;*/
+    /*color: #FEFEFE;*/
 }
 #fileWrapper{
 	transition:all 0.5s ease;
