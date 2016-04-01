@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DanceRobot</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="wrapper">
+
+    <h2 align="center">跳舞的机器人BP算法尝试</h2>
+
+    <div id="fileWrapper" class="file_wrapper">
+        <div id="info">
+            HTML5 Audio API showcase | An Audio Viusalizer
+        </div>
+        <label for="uploadedFile">Drag&drop or select a file to play:</label>
+        <input type="file" id="uploadedFile"/>
+        <div><small>timer: 20<input max="100" min="0" VALUE="0" type="range" id="progress"/>120</small></div>
+    </div>
+
+    <div id="visualizer_wrapper">
+        <canvas id='canvas' width="800" height="350"></canvas>
+    </div>
+
+    <div>
+        <small>energy: <progress value="0" id="energy"  max="1000"></progress></small><span style="width: 40px;display: inline-block;" id="energy_val"></span>
+        <small>maxEnergy: <progress value="0"  max="1000" id="maxEnergy"></progress></small>
+        <small>minEnergy: <progress value="0"  max="1000" id="minEnergy"></progress></small>
+        <br/>
+        <small>in: <progress value="0"  max="1000" id="_in"></progress></small>
+        <small>hn: <progress value="0"  max="1000" id="_hn"></progress></small>
+        <small>rn: <progress value="0"  max="1000" id="_rn"></progress></small>
+    </div>
+
+    <div>
+        <canvas id='dancer1' width="120" height="200"></canvas>
+        <canvas id='dancer2' width="120" height="200"></canvas>
+        <canvas id='dancer3' width="120" height="200"></canvas>
+        <canvas id='dancer4' width="120" height="200"></canvas>
+        <canvas id='dancer5' width="120" height="200"></canvas>
+        <canvas id='dancer6' width="120" height="200"></canvas>
+    </div>
+    <div>
+        <small>timer: 20<input max="100" min="0" VALUE="0" type="range" id="timer"/>120</small>
+    </div>
+</div>
+<!--<footer>-->
+<!--<small>Star me on <a href="https://github.com/Wayou/HTML5_Audio_Visualizer" target="_blank">GitHub</a></small>-->
+<!--</footer>-->
+<script src="bower_components/jquery/jquery.min.js"></script>
+<script src="js/html5_audio_visualizer.js"></script>
+<script src="js/html5_audio_visualizer_patch.js"></script>
+<script src="js/dancer.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>
