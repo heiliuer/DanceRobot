@@ -21,6 +21,9 @@ var gulp = require('gulp'),
 
 var prefixer = require("./my-modules/prefixer");
 
+
+var pagesPath = "dist/gh-pages";
+
 gulp.task("default", function () {
     //默认任务 执行多个任务
     gulp.start("htmls", 'styles', 'scripts', 'images', "watch"/*, "server"*/);
@@ -32,7 +35,7 @@ gulp.task("htmls", function () {
     return gulp.src("*.html")
         .pipe(htmlmin({collapseWhitespace: true}))
         .pipe(prefixer(DEBUG_SCRIPT, true))
-        .pipe(gulp.dest("dist"));
+        .pipe(gulp.dest("dist")).pipe(gulp.dest(pagesPath));
 });
 
 //处理css
@@ -43,7 +46,7 @@ gulp.task('styles', function () {
          .pipe(rename({suffix: '.min'}))*///生成min文件
         .pipe(cssnano())//压缩css
         /*.pipe(concat("main.css"))*///合并css
-        .pipe(gulp.dest('dist/css'));
+        .pipe(gulp.dest('dist/css')).pipe(gulp.dest(pagesPath + "/css"));
 });
 
 //处理js
@@ -54,7 +57,7 @@ gulp.task("scripts", function () {
         /*.pipe(gulp.dest("dist/js"))
          .pipe(rename({suffix: ".min"}))*///生成min文件
         .pipe(uglify())//混淆代码
-        .pipe(gulp.dest("dist/js"));
+        .pipe(gulp.dest("dist/js")).pipe(gulp.dest(pagesPath + "/js"));
 });
 
 //添加md5后缀
@@ -64,7 +67,7 @@ gulp.task("scripts", function () {
 function compressImgs(folderName) {
     return gulp.src(folderName + "/**/*")
         .pipe(imagemin({optimizationLevel: 5, progressive: true, interlaced: true}))
-        .pipe(gulp.dest("dist/" + folderName))
+        .pipe(gulp.dest("dist/" + folderName)).pipe(gulp.dest(pagesPath + "/" + folderName))
         /*.pipe(notify({message: "images task ok"}))*/;
 }
 
