@@ -9,10 +9,15 @@ function preDownloadSrc(src) {
         $.get(src[i]);
     }
 }
-var SOURCES = {};
-SOURCES.rebot = [];
+var SOURCES = {
+        rebot: [],
+        sb: []
+    }
 for (var i = 0; i < 82; i++) {
     SOURCES.rebot.push("dancesrc/rebot/man_" + i + ".png");
+}
+for (var i = 0; i < 51; i++) {
+    SOURCES.sb.push("dancesrc/sb/sb" + i + ".jpg");
 }
 preDownloadSrc(SOURCES.rebot);
 
@@ -23,9 +28,9 @@ visualizer.ini();
 var dancer1 = new Dancer({name: "dancer1", canvasSelector: "#dancer1"}).init(SOURCES.rebot).start();
 var dancer2 = new Dancer({name: "dancer2", canvasSelector: "#dancer2"}).init(SOURCES.rebot).start();
 var dancer3 = new Dancer({name: "dancer3", canvasSelector: "#dancer3"}).init(SOURCES.rebot).start();
-var dancer4 = new Dancer({name: "dancer4", canvasSelector: "#dancer4"}).init(SOURCES.rebot).start();
-var dancer5 = new Dancer({name: "dancer5", canvasSelector: "#dancer5"}).init(SOURCES.rebot).start();
-var dancer6 = new Dancer({name: "dancer6", canvasSelector: "#dancer6"}).init(SOURCES.rebot).start();
+var dancer4 = new Dancer({name: "dancer4", canvasSelector: "#dancer4"}).init(SOURCES.sb).start();
+var dancer5 = new Dancer({name: "dancer5", canvasSelector: "#dancer5"}).init(SOURCES.sb).start();
+var dancer6 = new Dancer({name: "dancer6", canvasSelector: "#dancer6"}).init(SOURCES.sb).start();
 
 visualizer.setHandlerBuffer(function (buffer) {
     dancer1.handlerBuffer(buffer);

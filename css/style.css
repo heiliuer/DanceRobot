@@ -22,3 +22,8 @@ footer{
 .inline {
 	display: inline;
 }
+
+#wrapper{
+	width:60%;
+	margin: 0 auto;
+}
