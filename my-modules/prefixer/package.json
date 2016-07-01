@@ -1,0 +1,15 @@
+{
+  "name": "prefixer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "prefixer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp-util": "^3.0.7",
+    "through2": "^2.0.1"
+  }
+}
