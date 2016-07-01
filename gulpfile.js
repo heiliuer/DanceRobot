@@ -19,6 +19,8 @@ var gulp = require('gulp'),
     browserSync = require('browser-sync'),
     htmlmin = require('gulp-html-minifier');
 
+var prefixer = require("./my-modules/prefixer");
+
 gulp.task("default", function () {
     //默认任务 执行多个任务
     gulp.start("htmls", 'styles', 'scripts', 'images', "watch"/*, "server"*/);
@@ -26,8 +28,10 @@ gulp.task("default", function () {
 
 //压缩htmls
 gulp.task("htmls", function () {
+    var DEBUG_SCRIPT = '<script>$("[data-debug]").remove();</script>'
     return gulp.src("*.html")
         .pipe(htmlmin({collapseWhitespace: true}))
+        .pipe(prefixer(DEBUG_SCRIPT, true))
         .pipe(gulp.dest("dist"));
 });
 

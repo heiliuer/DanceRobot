@@ -4,26 +4,63 @@ html, body {
     /*background-color: #737373;*/
     /*color: #FEFEFE;*/
 }
-#fileWrapper{
-	transition:all 0.5s ease;
-}
-#fileWrapper:hover{
-	opacity: 1!important;
+
+#fileWrapper {
+    transition: all 0.5s ease;
 }
 
-#visualizer_wrapper{
-	text-align: center;
+#fileWrapper:hover {
+    opacity: 1 !important;
 }
-footer{
-	position: fixed;
-	bottom: 2px;
-	color:#aaa;
+
+#visualizer_wrapper {
+    text-align: center;
 }
+
+footer {
+    position: fixed;
+    bottom: 2px;
+    color: #aaa;
+}
+
 .inline {
-	display: inline;
+    display: inline;
 }
 
-#wrapper{
-	width:60%;
-	margin: 0 auto;
+#wrapper {
+    width: 60%;
+    margin: 0 auto;
 }
+
+.d-progress {
+    color: #ABABAB;
+}
+
+.d-progress *{
+    vertical-align: middle;
+}
+
+.d-progress .left-title {
+    width: 6em;
+    display: inline-block;
+    overflow: hidden;
+}
+.d-progress .right-title {
+    width: 3em;
+    text-align: right;
+    display: inline-block;
+}
+
+.dancers {
+    font-size: 0;
+    padding: 0 calc((100% - 600px) / 2);
+}
+
+.screen {
+    border: 1px solid #ECECEC;
+    border-radius: 4px;
+    margin: 2em 0;
+    padding: 0.5em;
+}
+
+
