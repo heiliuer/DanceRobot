@@ -15,6 +15,23 @@ html, body {
 
 #visualizer_wrapper {
     text-align: center;
+    width: 100%;
+    position: relative;
+}
+
+#visualizer_wrapper:after {
+    content: "";
+    padding-top: 38%;
+    display: block;
+}
+
+#visualizer_wrapper .canvas {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: #fdfdfe;
 }
 
 footer {
@@ -36,7 +53,7 @@ footer {
     color: #ABABAB;
 }
 
-.d-progress *{
+.d-progress * {
     vertical-align: middle;
 }
 
@@ -45,6 +62,7 @@ footer {
     display: inline-block;
     overflow: hidden;
 }
+
 .d-progress .right-title {
     width: 2em;
     text-align: right;

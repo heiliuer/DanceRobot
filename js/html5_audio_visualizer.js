@@ -173,6 +173,8 @@ Visualizer.prototype = {
         gradient.addColorStop(0.5, '#ff0');
         gradient.addColorStop(0, '#f00');
         var drawMeter = function() {
+            cwidth = canvas.width;
+            cheight = canvas.height - 2;
             var array = new Uint8Array(analyser.frequencyBinCount);
             analyser.getByteFrequencyData(array);
             that.handlerBuffer&&that.handlerBuffer(array);
