@@ -20,6 +20,7 @@ for (var i = 0; i < 51; i++) {
     SOURCES.sb.push("dancesrc/sb/sb" + i + ".jpg");
 }
 preDownloadSrc(SOURCES.rebot);
+preDownloadSrc(SOURCES.sb);
 
 //初始化visualizer和dancers
 var visualizer = new Visualizer();

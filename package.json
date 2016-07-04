@@ -27,7 +27,6 @@
     "yargs": "^4.7.1"
   },
   "scripts": {
-    "install": "npm install",
     "bowerinstall": "bower install",
     "gulp": "gulp"
   }
