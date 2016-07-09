@@ -177,7 +177,10 @@ Visualizer.prototype = {
             cheight = canvas.height - 2;
             var array = new Uint8Array(analyser.frequencyBinCount);
             analyser.getByteFrequencyData(array);
-            that.handlerBuffer&&that.handlerBuffer(array);
+            if(that.status !=0){
+                that.handlerBuffer&&that.handlerBuffer(array);
+            }
+
             if (that.status === 0) {
                 //fix when some sounds end the value still not back to zero
                 for (var i = array.length - 1; i >= 0; i--) {
@@ -221,7 +224,7 @@ Visualizer.prototype = {
             return;
         };
         this.status = 0;
-        var text = 'HTML5 Audio API showcase | An Audio Viusalizer';
+        var text = 'Audio Viusalizer';
         document.getElementById('fileWrapper').style.opacity = 1;
         document.getElementById('info').innerHTML = text;
         instance.info = text;

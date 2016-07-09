@@ -10,9 +10,9 @@ function preDownloadSrc(src) {
     }
 }
 var SOURCES = {
-        rebot: [],
-        sb: []
-    }
+    rebot: [],
+    sb: []
+}
 for (var i = 0; i < 82; i++) {
     SOURCES.rebot.push("dancesrc/rebot/man_" + i + ".png");
 }
@@ -26,6 +26,15 @@ preDownloadSrc(SOURCES.sb);
 var visualizer = new Visualizer();
 visualizer.ini();
 
+
+var selector = document.getElementById("audioSelect");
+selector.onchange = function () {
+    if(selector.value){
+        visualizer.playAudioSrc(selector.value);
+    }
+}
+
+
 var dancer1 = new Dancer({name: "dancer1", canvasSelector: "#dancer1"}).init(SOURCES.rebot).start();
 var dancer2 = new Dancer({name: "dancer2", canvasSelector: "#dancer2"}).init(SOURCES.rebot).start();
 var dancer3 = new Dancer({name: "dancer3", canvasSelector: "#dancer3"}).init(SOURCES.rebot).start();
@@ -35,6 +44,10 @@ var dancer6 = new Dancer({name: "dancer6", canvasSelector: "#dancer6"}).init(SOU
 
 visualizer.setHandlerBuffer(function (buffer) {
     dancer1.handlerBuffer(buffer);
+
+    console.log("send data");
+
+
 
     //console.log(dancer1.energyMax,dancer1.energyMin);
     $("#maxEnergy").val(dancer1.energyMax * 1000);

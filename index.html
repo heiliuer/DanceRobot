@@ -18,6 +18,16 @@
         </div>
         <label for="uploadedFile">Drag&drop or select a audio file to play:</label>
         <input type="file" accept="audio/*" id="uploadedFile"/>
+        <div>
+            <span>Default</span>
+            <select id="audioSelect">
+                <option value="stop">select an audio</option>
+                <option value="music/fade.mp3">fade</option>
+                <option value="music/quietness.mp3">quietness</option>
+                <option value="music/intro.mp3">intro</option>
+            </select>
+        </div>
+
     </div>
 
     <div class="screen">
@@ -88,23 +98,28 @@
     </div>
 
     <br>
-    <a target="https://github.com/heiliuer/DanceRobot" href="https://github.com/heiliuer/DanceRobot">view sources on github</a>
+    <a target="https://github.com/heiliuer/DanceRobot" href="https://github.com/heiliuer/DanceRobot">view sources on
+        github</a>
 </div>
 <script>
     +function () {
         var canvas = document.querySelector("#canvas");
+
         function fixedCanvasSize() {
             canvas.width = canvas.offsetWidth;
             canvas.height = canvas.offsetHeight;
         }
+
         fixedCanvasSize();
-        window.onresize=fixedCanvasSize;
+        window.onresize = fixedCanvasSize;
     }();
 </script>
+<!-- build:js js/all.js -->
 <script src="js/jquery.js"></script>
 <script src="js/html5_audio_visualizer.js"></script>
 <script src="js/html5_audio_visualizer_patch.js"></script>
 <script src="js/dancer.js"></script>
 <script src="js/index.js"></script>
+<!-- endbuild -->
 </body>
 </html>

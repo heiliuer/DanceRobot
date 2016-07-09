@@ -26,7 +26,7 @@ var pagesPath = "dist/gh-pages";
 
 gulp.task("default", function () {
     //默认任务 执行多个任务
-    gulp.start("htmls", 'styles', 'scripts', 'images', "watch"/*, "server"*/);
+    gulp.start("htmls", 'styles', 'scripts', 'images', 'music', "watch"/*, "server"*/);
 });
 
 //压缩htmls
@@ -70,6 +70,9 @@ function compressImgs(folderName) {
         .pipe(gulp.dest("dist/" + folderName)).pipe(gulp.dest(pagesPath + "/" + folderName))
         /*.pipe(notify({message: "images task ok"}))*/;
 }
+gulp.task("music", function () {
+    return gulp.src("music/*").pipe(gulp.dest("dist/music")).pipe(gulp.dest(pagesPath + "/music"));
+});
 
 gulp.task("images", function () {
     //optimizationLevel优化级别

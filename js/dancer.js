@@ -117,7 +117,7 @@ Dancer.prototype = {
     },
     //检测是否有音频数据在输入
     isBufferSuppying:function () {
-        return (new Date().getTime()-this.lastBufferTime)<3000;
+        return (new Date().getTime()-this.lastBufferTime)<600;
     },
     handlerBuffer: function (buffer) {
         this.lastBufferTime=new Date().getTime();
