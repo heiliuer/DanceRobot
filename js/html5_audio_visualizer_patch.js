@@ -1,16 +1,1 @@
-/**
- * Created by Administrator on 2016/3/17 0017.
- */
-+function () {
-    var ptype = Visualizer.prototype;
-    var ori_start = ptype._start;
-    ptype._start = function () {
-        ori_start.apply(this, arguments);
-    };
-    ptype.setHandlerBuffer = function (handler) {
-        if (!$.isFunction(handler)) {
-            handler = null;
-        }
-        this.handlerBuffer = handler;
-    }
-}();
++function(){var t=Visualizer.prototype,e=t._start;t._start=function(){e.apply(this,arguments)},t.setHandlerBuffer=function(t){$.isFunction(t)||(t=null),this.handlerBuffer=t},t.playAudioSrc=function(t){var e=this.audioContext;if("stop"==t)return this._audioEnd(this),void this.audioBufferSouceNode.stop();1===this.status&&(this.forceStop=!0);var i=new XMLHttpRequest,o=this;i.open("GET",t,!0),i.responseType="arraybuffer",i.onload=function(){var t=i.response;e.decodeAudioData(t,function(t){o._updateInfo("Decode succussfully,start the visualizer",!0),o._visualize(e,t)},function(t){o._updateInfo("!Fail to decode the file",!1)})},this.fileName=t,i.send(),this._updateInfo("Starting read audio",!0)}}();
