@@ -22,6 +22,8 @@ for (var i = 0; i < 51; i++) {
 preDownloadSrc(SOURCES.rebot);
 preDownloadSrc(SOURCES.sb);
 
+$.get("music/fade.mp3");
+
 //初始化visualizer和dancers
 var visualizer = new Visualizer();
 visualizer.ini();
@@ -29,7 +31,7 @@ visualizer.ini();
 
 var selector = document.getElementById("audioSelect");
 selector.onchange = function () {
-    if(selector.value){
+    if (selector.value) {
         visualizer.playAudioSrc(selector.value);
     }
 }
@@ -46,7 +48,6 @@ visualizer.setHandlerBuffer(function (buffer) {
     dancer1.handlerBuffer(buffer);
 
     console.log("send data");
-
 
 
     //console.log(dancer1.energyMax,dancer1.energyMin);
